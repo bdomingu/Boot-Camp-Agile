@@ -63,6 +63,7 @@ while run:
 
 
 
+
     #if user input is get trades history
     if action == "get trades history":
         accountfunctions.trades_history(api_key, api_secret)
@@ -84,10 +85,14 @@ while run:
 
     #if user input is change account, they'll be able to input a new
     #API Key and API Secret.
+
+
+    # if user input is change account, they'll be able to input a new
+    # API Key and API Secret.
+
     if action == "change account":
         api_key = input("Please enter your API Key: ")
         api_secret = input("Please enter your API Secret: ")
-
 
     #if user input is add order, they'll be able to add an order
     if action == "add order":
@@ -95,6 +100,9 @@ while run:
 
 
     #if user action is exit then exit loop
+
+    # if user action is exit then exit loop
+
     if action == "exit":
         run = False
         # if user action is not listed then print error message
