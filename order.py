@@ -92,23 +92,20 @@ def add_order():
     print("Wrong input")
     add_order()
 
+def kraken_request(url_path, data, api_key, api_sec):
+    headers = {"API-Key": api_key, "API-Sign": Kraken_Request.get_kraken_signature(url_path, data, api_sec)}
+    response = requests.post((api_url + url_path), headers=headers, data=data)
+    return response
 
 #Place order function is called after the user enters the price. This function does
 #the API call.
 def place_order():
-  def kraken_request(url_path, data, api_key, api_sec):
-    headers={}
-    headers['API-key'] = api_key
-    headers['API-Sign'] = Kraken_Request.get_kraken_signature(url_path, data, api_sec)
-    req = requests.post((api_url + url_path), headers=headers, data=data)
-    return req
-  
   try:
     resp = kraken_request('/0/private/AddOrder', kracken_data, api_key, api_sec)
     print(resp.json())
   
   except resp.exceptions.HTTPError as err:
-    return  repr(err)
+    return repr(err)
     print("Error")
     
   
