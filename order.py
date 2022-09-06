@@ -1,17 +1,20 @@
 import time
 import os 
 import requests
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import Kraken_Request 
 
-load_dotenv()
+
+# load_dotenv()
 
 api_url = "https://api.kraken.com"
 
-# I used my personal API keys to test but will probably need to change this if we are
-#requring the user to enter API key and API Secret.
-api_key = os.getenv('API_KEY')
-api_sec = os.getenv('API_SECRET')
+
+
+# # I used my personal API keys to test but will probably need to change this if we are
+# requring the user to enter API key and API Secret.
+api_key = 'bjDzPOBgSpwcJlNu39Xh5vv+DIr9fxA67ktDgB9+RkOYmuT24Tw1EOVc'
+api_sec = 'PuDh4cXjEM0+cP+iOyCR7SAfwE3atFqnr9mA3H6iTMQjZ4uL9QFfoEPwq3d1Zjo0GTctSZXWfnYHU1ePtkolEQ=='
 
 #stores the user input (variables) as a global object
 kracken_data = {
