@@ -12,6 +12,7 @@ import base64
 
 api_url = 'https://api.kraken.com'
 
+
 def get_kraken_signature(urlpath, data, secret):
     postdata = urllib.parse.urlencode(data)
     encoded = (str(data['nonce']) + postdata).encode()

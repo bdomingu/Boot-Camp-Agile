@@ -5,9 +5,9 @@ import urllib.parse
 import hashlib
 import hmac
 import base64
-import order 
+import addorder 
 import accountfunctions
-# from tqdm.auto import tqdm
+from tqdm.auto import tqdm
 import Kraken_Request as kr
 import os
 
@@ -151,7 +151,7 @@ while run:
             command_end()
 
         case "7":
-            order.add_order()
+            addorder.add_order(api_key, api_secret)
             command_end()
         
         case "8":
